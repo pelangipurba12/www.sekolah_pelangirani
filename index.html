@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Negeri 7 Batam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+            color: #333; 
+            line-height: 1.6;
+        }
+        .header { 
+            text-align: center; 
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); 
+            color: white; 
+            padding: 40px 20px; 
+            margin-bottom: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 16px rgba(0,123,255,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header h1 { margin: 0; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .header h2 { margin: 10px 0; font-size: 1.8em; }
+        .header p { font-size: 1.1em; margin: 0; }
+
+        .stats { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            background: white; 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .stat-item { 
+            text-align: center; 
+            padding: 15px; 
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
+            border-radius: 10px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-item:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 6px 20px rgba(0,123,255,0.2); 
+        }
+        .stat-item h3 { 
+            font-size: 2em; 
+            color: #007bff; 
+            margin: 0; 
+        }
+        .stat-item i { font-size: 2.5em; color: #28a745; margin-bottom: 10px; }
+        .stat-item p { margin: 5px 0 0; font-weight: 300; }
+
+        .section { 
+            background: white; 
+            padding: 30px; 
+            margin: 20px 0; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .section:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        .section h2 { 
+            color: #007bff; 
+            font-size: 1.8em; 
+            border-bottom: 3px solid #007bff; 
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .section ul { list-style-type: none; padding: 0; }
+        .section li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .section li:before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #28a745; margin-right: 10px; }
+
+        .tags { 
+            display: flex; 
+            justify-content: space-around; 
+            margin: 30px 0; 
+            gap: 20px;
+        }
+        .tag { 
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%); 
+            color: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            text-align: center; 
+            flex: 1; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(40,167,69,0.3);
+        }
+        .tag:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 8px 25px rgba(40,167,69,0.4); 
+        }
+        .tag h3 { margin: 0; font-size: 1.5em; }
+        .tag p { margin: 10px 0 0; font-weight: 300; }
+        .tag i { font-size: 3em; margin-bottom: 10px; display: block; }
+
+        .concentrations { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            margin-top: 20px;
+        }
+        .concentration { 
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%); 
+            padding: 20px; 
+            text-align: center; 
+            border-radius: 12px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .concentration:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 8px 25px rgba(0,123,255,0.2); 
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+        }
+        .concentration h4 { 
+            color: #007bff; 
+            font-size: 1.4em; 
+            margin: 0 0 10px; 
+        }
+        .concentration p { margin: 0; font-weight: 400; }
+        .concentration i { font-size: 2.5em; color: #007bff; margin-bottom: 10px; display: block; }
+
+        .news { 
+            background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); 
+            padding: 30px; 
+            text-align: center; 
+            border-radius: 15px; 
+            color: #333; 
+            box-shadow: 0 4px 12px rgba(255,193,7,0.3);
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+        .news h2 { margin: 0; font-size: 2em; color: #dc3545; }
+        .news h3 { margin: 10px 0; font-size: 1.5em; }
+
+        @media (max-width: 768px) {
+            .header { padding: 30px 15px; }
+            .stats { grid-template-columns: repeat(2, 1fr); padding: 20px; }
+            .tags { flex-direction: column; }
+            .concentrations { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-school"></i> SMK Negeri 7 Batam</h1>
+        <h2>SELAMAT DATANG di</h2>
+        <p>SMK Negeri 7 Batam Mewujudkan Peserta Didik yang Beriman, Bertaqwa kepada TUHAN YANG MAHA ESA dan Berakhlak Mulia, Terampil, Unggul, dan Berdaya Saing Global di Era Teknologi Digital.</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat-item">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>35</h3>
+            <p>GURU DAN TENAGA KEPENDIDIKAN</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <h3>40</h3>
+            <p>ROMBEL</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-cogs"></i>
+            <h3>6</h3>
+            <p>KONSENTRASI KEAHLIAN</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>1.600</h3>
+            <p>PESERTA DIDIK</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-quote-left"></i> KATA SAMBUTAN</h2>
+        <h3>KEPALA SMK NEGERI 7 BATAM</h3>
+        <p>Kepala SMK Negeri 7 Batam</p>
+        Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di website kami. Mari bersama wujudkan generasi unggul!
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-info-circle"></i> IDENTITAS SEKOLAH</h2>
+        <ul>
+            <li>Akreditasi: A</li>
+            <li>Kurikulum: Kurikulum Merdeka</li>
+            <li>NPSN: 69774885</li>
+            <li>Status: Negeri</li>
+            <li>Bentuk Pendidikan: SMK</li>
+            <li>Status Kepemilikan: Pemerintah Daerah</li>
+            <li>SK Pendirian Sekolah: KPTS.367/HK/IX/2014</li>
+            <li>Tanggal SK Pendirian: 2014-09-05</li>
+            <li>SK Izin Operasional: KPTS.367/HK/IX/2014</li>
+            <li>Tanggal SK Izin Operasional: 2015-10-23</li>
+        </ul>
+    </div>
+
+    <div class="tags">
+        <div class="tag">
+            <i class="fas fa-lightbulb"></i>
+            <h3>INOVATIF</h3>
+            <p>Pioneering Solutions and Innovations</p>
+        </div>
+        <div class="tag">
+            <i class="fas fa-globe"></i>
+            <h3>BERBUDAYA</h3>
+            <p>Diverse Ethnicities and Religions</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-star"></i> KONSENTRASI KEAHLIAN</h2>
+        <p>Konsentrasi Unggulan SMK Negeri 7 Batam</p>
+        <div class="concentrations">
+            <div class="concentration">
+                <i class="fas fa-code"></i>
+                <h4>RPL</h4>
+                <p>Rekayasa Perangkat Lunak</p>
+            </div>
+            <div class="concentration">
+                <i class="fas fa-paint-brush"></i>
+                <h4>DKV</h4>
+                <p>Desain Komunikasi Visual</p>
+            </div>
+            <div class="concentration">
+                <i class="fas fa-plug"></i>
+                <h4>TKL</h4>
+                <p>Teknik Ketenagaan Listrik</p>
+            </div>
+            <div class="concentration">
+                <i class="fas fa-shopping-cart"></i>
+                <h4>BR</h4>
+                <p>Bisnis Retail</p>
+            </div>
+            <div class="concentration">
+                <i class="fas fa-file-alt"></i>
+                <h4>MP</h4>
+                <p>Manajemen Perkantoran</p>
+            </div>
+            <div class="concentration">
+                <i class="fas fa-network-wired"></i>
+                <h4>TKJ</h4>
+                <p>Teknik Komputer Jaringan</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><i class="fas fa-rocket"></i> Rencana Aksi Program SMK Pusat Keunggulan</h2>
+        <p>SMK Negeri 7 Batam, SMK Pusat Keunggulan</p>
+        <ul>
+            <li>Mengembangkan kerjasama dengan DUDIKA</li>
+            <li>Memiliki kelas industri untuk semua konsentrasi keahlian</li>
+            <li>Memiliki Lembaga Sertifikasi Profesi</li>
+        </ul>
+    </div>
+
+    <div class="news">
+        <h2><i class="fas fa-newspaper"></i> SMK NEGERI 7 BATAM</h2>
+        <h3>kesimpulan</h3>
+        <!-- SMKN 7 Batam terus memperlihatkan perkembangan positif, baik dalam hal antusiasme masyarakat terhadap sekolah, kapasitas dan kualitas pendidikan, maupun dalam menyediakan pengalaman pembelajaran yang relevan dengan era digital. Untuk mempertahankan dan meningkatkan prestasi, kolaborasi lintas sektor dan inovasi dalam pengelolaan sumber daya—fasilitas, guru, kurikulum—menjadi kunci. -->
+    </div>
+</body>
+</html>
